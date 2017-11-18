@@ -52,20 +52,21 @@ namespace Kalkylator
             Console.Write("Tal 2: ");
             String tal2 = Console.ReadLine();
 
-            int tal1int = 0; //
-            int tal2int = 0;
+            long tal1int = 0; //
+            long tal2int = 0;
             try
             {
-                tal1int = int.Parse(tal1); 
-                tal2int = int.Parse(tal2);
+                tal1int = long.Parse(tal1); 
+                tal2int = long.Parse(tal2);
             }
             catch(Exception e)
             {
-                Console.WriteLine("Fel inmatning!");
+                Console.WriteLine("Fel inmatning! " + e.Message);
                 Console.WriteLine(""); //Tom rad för att enklare utläsa kalkylatorn
+                return false;
             }
 
-            int resultatet = 0; 
+            long resultatet = 0; 
             switch (raknesatt)
             {
                 case "1":
