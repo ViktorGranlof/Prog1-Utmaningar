@@ -1,0 +1,7 @@
+C:\Users\elev\source\repos\Multiplikation\Multiplikation\bin\Debug\Multiplikation.exe.config
+C:\Users\elev\source\repos\Multiplikation\Multiplikation\bin\Debug\Multiplikation.exe
+C:\Users\elev\source\repos\Multiplikation\Multiplikation\bin\Debug\Multiplikation.pdb
+C:\Users\elev\source\repos\Multiplikation\Multiplikation\obj\Debug\Multiplikation.csproj.CoreCompileInputs.cache
+C:\Users\elev\source\repos\Multiplikation\Multiplikation\obj\Debug\Multiplikation.exe
+C:\Users\elev\source\repos\Multiplikation\Multiplikation\obj\Debug\Multiplikation.pdb
+C:\Users\elev\source\repos\Multiplikation\Multiplikation\obj\Debug\Multiplikation.csprojResolveAssemblyReference.cache
