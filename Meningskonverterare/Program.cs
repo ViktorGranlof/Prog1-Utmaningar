@@ -23,8 +23,8 @@ namespace Meningskonverterare
             Console.WriteLine("Välj 1 för att konvertera till STORA BOKSTÄVER"); // Användaren möts med två val
             Console.WriteLine("Välj 2 för att konvertera till små bokstäver");
             Console.Write("Ditt val: ");
-            String mening = Console.ReadLine();
-            switch (mening)
+            String mening = Console.ReadLine(); // Tar in det användaren skriver och sparar det i 'mening'
+            switch (mening) // En switch-sats där användern får två val, att skriva in '1' eller '2'
             {
                 case "1": // Kollar om användaren valde nummer 1
 
@@ -35,7 +35,7 @@ namespace Meningskonverterare
                     break;
 
                 default: // Kollar om användaren valde något annat förutom 1 eller 2
-                    Console.WriteLine("Fel inmatning");
+                    Console.WriteLine("Fel inmatning"); 
                     Console.WriteLine("");
                     return false;
             }
@@ -45,19 +45,19 @@ namespace Meningskonverterare
             switch (mening) //Gör en switch sats som antingen gör meningen i Uppercase eller Lowercase
             {
                 case "1":
-                    mening1 = mening1.ToUpper(); // Gör meningen till uppercase 
+                    mening1 = mening1.ToUpper(); // Gör meningen till uppercase, kortkommandot .ToUpper gör det åt oss
                     Console.WriteLine("Konverterad mening: " + mening1);
                     break;
 
                 case "2":
-                    mening1 = mening1.ToLower(); // Gör meningen till lowercase 
+                    mening1 = mening1.ToLower(); // Gör meningen till lowercase, kortkommandot .ToLower gör det åt oss
                     Console.WriteLine("Konverterad mening: " + mening1);
                     break;
             }
             Console.WriteLine("Skriv något för att lämna"); 
             Console.ReadLine(); // Håller programmet öppet tills användare skriver in något mer
 
-            return true; // Kör programmet helt igen returneras true och programmet stängs ner
+            return true; // Kör programmet helt igenom returneras true och programmet stängs ner
         }
     }
 }
