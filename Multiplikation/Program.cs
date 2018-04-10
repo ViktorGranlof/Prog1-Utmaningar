@@ -14,7 +14,7 @@ namespace multiplikationstabell
             long tal = -1; // Ger tal ett värde
             Console.WriteLine("Multiplikationstabeller");
             Console.Write("Skriv in ett valfritt heltal: ");
-            while (tal == -1)
+            while (tal == -1) //Medans tal är -1
             { // Försöker med att konvertera en string till en int loop i detta fall fungerar den också som felhanterare
                 try
                 {
@@ -22,7 +22,7 @@ namespace multiplikationstabell
                     tal = Convert.ToInt64(userInput); // Fungerar det inte går dn över till exceptions
                     break;
                 }
-                catch (FormatException) // När formatet inte är korrekt, alltså till exempel en bokstav eller tecken
+                catch (FormatException) // När formatet inte är korrekt, alltså till exempel en bokstav eller tecken körs det här
                 {
                     Console.WriteLine("Fel inmatning. Försök igen."); // Skriver ut felmeddelande
                 }
