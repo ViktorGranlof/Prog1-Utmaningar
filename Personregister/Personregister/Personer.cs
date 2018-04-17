@@ -13,7 +13,7 @@ namespace Personregister
         private int age;
         private string location;
 
-        // Konstruktor som tar in namn, ålder och plats 
+        // Konstruktor som tar in namn, ålder och plats, används sedan i register när man skapar objekt 
         public Personer(string name, int age, string location)
         {
             this.name = name;
@@ -21,7 +21,7 @@ namespace Personregister
             this.location = location;
         }
 
-        public string GetName()
+        public string GetName() 
         {
             return name;
         }

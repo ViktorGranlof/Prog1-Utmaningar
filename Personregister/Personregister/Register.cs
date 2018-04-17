@@ -14,12 +14,12 @@ namespace Personregister
         // Konstruktor 
         public Register()
         {
-            personLista = new List<Personer>();
+            personLista = new List<Personer>(); // Gör en ny lista 
 
             FillWithPeople();
         }
 
-        void FillWithPeople()
+        void FillWithPeople() //
         {
             FillPersoner();
         }
@@ -27,17 +27,17 @@ namespace Personregister
         void FillPersoner()
         {
             // Skapar tre objekt av Personer
-            Personer viktor = new Personer("Viktor", 17, "Falun");
+            Personer viktor = new Personer("Viktor", 18, "Falun");
             Personer albert = new Personer("Albert", 32, "Örebro");
             Personer isak = new Personer("Isak", 25, "Malmö");
 
-            // Lägger till personerna i vår lista
+            // Lägger till personerna i 'personLista'
             personLista.Add(viktor);
             personLista.Add(albert);
             personLista.Add(isak);
         }
 
-        public void addPerson(string name, int age, string location)
+        public void addPerson(string name, int age, string location) //När 
         {
             Personer x = new Personer(name, age, location);
             personLista.Add(x);
