@@ -16,7 +16,7 @@ namespace Personregister
             Console.WriteLine();
            
             int klar = 2; //Get variabeln klar ett värde
-            do //Om klar == 2 är visaMeny true
+            do //Om klar == 2 är visaMeny true.
             {
                 bool visaMeny = false;
                 if(klar == 2)
