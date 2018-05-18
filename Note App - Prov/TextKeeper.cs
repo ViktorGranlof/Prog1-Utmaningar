@@ -23,9 +23,9 @@ namespace Note_App2
             else if (input == "2")
             {
                 Console.WriteLine("Vilken anteckning vill du ta bort?");
-                string userInput = Console.ReadLine();
-                int inputs = Convert.ToInt32(userInput);
-                textList.RemoveAt(inputs-1);
+                string userInput = Console.ReadLine();        //Tar in det användaren skriver
+                int inputs = Convert.ToInt32(userInput);      //Konverterar användarens input till en int
+                textList.RemoveAt(inputs-1);                  //Tar bort den text i positionen där användarens input matchar
                 // textList.Clear();        //Rensar hela listan                                       
             }                                                                     
             else if (input == "3")
