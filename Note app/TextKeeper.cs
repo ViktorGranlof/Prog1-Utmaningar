@@ -31,7 +31,7 @@ namespace Note_App2
             else if (input == "3")
             {
                 Console.WriteLine();
-                PrintTexts();         //Kör metoden printtexts
+                PrintTexts();         //Kör metoden PrintTexts
             }
             else if (input == "4")
             {
