@@ -14,40 +14,40 @@ namespace FormKalkylator
     {
         public Form1()
         {
-            InitializeComponent();
+            InitializeComponent(); 
         }
         float tal1;
         int calc;
         
         public void calculate()
         {
-            float summa = 0;
-            float tal2;
-            float.TryParse(txtBox.Text, out tal2);
-            txtBox.Text = "";
-            if (calc == 1)
+            float summa = 0; //Ger float variabeln summa ett värde av 0, viktigt att det är float för att kunna använda decimaler...
+            float tal2;     //Skapar en variabel tal2
+            float.TryParse(txtBox.Text, out tal2); //Försöker att konvertera det som står i txtBox till float och sätta in det värdet i tal2
+            txtBox.Text = ""; //Sätter txtBox texten till ingenting eftersom det är tomt i ""
+            if (calc == 1) //Utför uträkningen beroende på vilken siffra från 1 till 4 som användaren skrivit in.
             {
-                summa = tal1 / tal2;
+                summa = tal1 / tal2; //Division
             }
             else if (calc == 2)
             {
-                summa = tal1 - tal2;
+                summa = tal1 - tal2; //Subtraktion
             }
             else if (calc == 3)
             {
-                summa = tal1 + tal2;
+                summa = tal1 + tal2; //Addition
             }
             else if (calc == 4)
             {
-                summa = tal1 * tal2;
+                summa = tal1 * tal2; //Multiplikation
             }
-            tal1 = summa;
+            tal1 = summa; 
             txtBox.Text = summa.ToString();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e) 
         {
-            calculate();
+            calculate(); //Anropar calculate metoden
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -55,7 +55,6 @@ namespace FormKalkylator
             calc = 1;
             float.TryParse(txtBox.Text, out tal1);
             txtBox.Text = "";
-           
         }
 
         private void txtBox_TextChanged(object sender, EventArgs e)
@@ -63,9 +62,7 @@ namespace FormKalkylator
 
         }
 
-        // Ger alla sifferknappar ett värde som skrivs ut 
-
-        private void btn1_Click(object sender, EventArgs e)
+        private void btn1_Click(object sender, EventArgs e)   // Ger alla sifferknappar ett värde som skrivs ut 
         {
             txtBox.Text += "1";
         }
