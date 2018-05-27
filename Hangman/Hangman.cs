@@ -4,53 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Hangman
+namespace Hangman2
 {
-    class Program
+    class Hangman
     {
-        static void Main(string[] args)
-        {
-            string[] wordList = new string[6]; //Skapar en array med ord som agerar ordlista
-            wordList[0] = "Laddare";
-            wordList[1] = "Betyg";
-            wordList[2] = "Programmering";
-            wordList[3] = "Matematik";
-            wordList[4] = "Datormus";
-            wordList[5] = "Pepparkaka";
 
-            Random rng = new Random();
-
-            int wordIndex = rng.Next(0, wordList.Length); //Väljer ut ett slumpmässigt tal
-
-            Console.WriteLine("THE GAME OF HANGMAN!");
-
-            Console.WriteLine();
-            Console.WriteLine("Här är ditt gissningsord!");
-            Console.WriteLine();
-
-            string selectedWord = wordList[wordIndex]; // Väljer ett slumpartat ord och ger variabeln 
-
-            string guessWord = "";
-            for (int i = 0; i < selectedWord.Length; i++)
-            {
-                guessWord += "_";
-            }
-            
-            int lives = 8; //Ger spelaren ett bestämt antal liv
-
-            bool continueGuess = true;
-            do
-            {
-                continueGuess = PerformGuess(selectedWord, ref guessWord, ref lives); 
-            }
-            while (continueGuess);
-        }
-
-        static bool PerformGuess(string selectedWord, ref string guessWord, ref int lives) //Ref betyder att kan den ändrar om tidigare tilldelade värden 
+        public bool PerformGuess(string selectedWord, ref string guessWord, ref int lives) //Ref betyder att kan den ändrar om tidigare tilldelade värden 
         {
             PrintGuessWord(guessWord);          //  
 
-            Console.Write("Your guess: "); 
+            Console.Write("Your guess: ");
             string input = Console.ReadLine();  //Tar in användarens input
             if (input.Length != 1)              //Är inputet inte 1 karaktär körs detta
             {
@@ -65,7 +28,7 @@ namespace Hangman
                 {
                     Console.WriteLine("\nCorrect guess, it was " + guessWord + "! \n\nYou won! Press any button to exit");
                     Console.ReadLine();
-                    return false; 
+                    return false;
                 }
             }
             else
@@ -73,7 +36,7 @@ namespace Hangman
                 lives--;           //Inkrementerar lives med 1
                 if (lives == 0)    //Är lives noll
                 {
-                    Console.WriteLine("You lost! Press any button to exit");
+                    Console.WriteLine("You lost! The correct word was: " + selectedWord + ". Press any button to exit");
                     Console.ReadLine();
                     return false;       //Returnernar false som gör att programmet stänger ner
                 }
@@ -82,7 +45,7 @@ namespace Hangman
             return true;
         }
 
-        static void PrintGuessWord(string guessWord) //En metod som skriver ut det gissade ordet 
+        public void PrintGuessWord(string guessWord) //En metod som skriver ut det gissade ordet 
         {
             for (int i = 0; i < guessWord.Length; i++) //För längden av guessword skrivs ett '_' ut och efter det ett mellanslag ' '
             {
@@ -92,25 +55,25 @@ namespace Hangman
             Console.WriteLine();
         }
 
-        static bool LetterInWord(string selectedWord, string input) 
+        public bool LetterInWord(string selectedWord, string input)
         {
-          if (selectedWord.IndexOf(input, StringComparison.OrdinalIgnoreCase) == -1) // String.Comparison.OrdinalIgnoreCase'
+            if (selectedWord.IndexOf(input, StringComparison.OrdinalIgnoreCase) == -1) // String.Comparison.OrdinalIgnoreCase'
             {                                                                        // Ser till att inputet inte är case sensetive
                 return false;
-          }
-          else
-          {
+            }
+            else
+            {
                 return true;
-          }
+            }
         }
 
-        static void AddLetter(string selectedWord, ref string guessWord, string input) // En metod som skickar in selectedWord, en ändringsbar string och en input.
+        public void AddLetter(string selectedWord, ref string guessWord, string input) // En metod som skickar in selectedWord, en ändringsbar string och en input.
         {
             int startIndex = 0; // Ger startIndex ett värde 0
             do
             {
                 int index = selectedWord.IndexOf(input, startIndex, StringComparison.OrdinalIgnoreCase); // Letar efter position av den inslagna bokstaven
-                if (index != -1)                                                                         
+                if (index != -1)
                 {
                     char[] guess = guessWord.ToCharArray(); // Gör om guessWord till en char array för att kunna modifiera ordet för att kunna bytas ut
                     guess[index] = selectedWord[index];     // Tar bokstaven från index och stoppar in bokstaven i ordet 
@@ -121,10 +84,9 @@ namespace Hangman
                 {
                     startIndex = index;                     // Körs om ingen angiven bokstav fanns i ordet, hoppar ur loopen
                 }
-                
+
             }
             while (startIndex != -1); //Kör medan startIndex inte är -1
-        } 
+        }
     }
-
 }
