@@ -11,7 +11,7 @@ namespace Träningschema
         static void Main(string[] args)
         {
             bool result = true;
-            while (result)
+            while (result) //Kör programmet när result är true
             {
                result = RunProgram();
             }
@@ -21,21 +21,20 @@ namespace Träningschema
         {
             Console.WriteLine("Hur många dagar vill du träna på?");
 
-            Training train = new Training();
+            Training train = new Training(); //Anropar klassen Training 
 
-            string userInput = Console.ReadLine();
+            string userInput = Console.ReadLine(); //Tar in det användaren skriver in i strängen userInput
             int choice;
 
             bool worked = int.TryParse(userInput, out choice);
 
-            if (worked == false)
+            if (worked == false) //Om det inte tryParse fungerar
             {
-                Console.WriteLine("Fel inmatning");
-                Console.WriteLine();
+                Console.WriteLine("Fel inmatning\n");
                 return true;
             }
 
-            for (int i = 0; i < choice; i++)
+            for (int i = 0; i < choice; i++) //Skriver ut ett visst antal dagar beroende på användarens "choice"
             {
                 Console.WriteLine(train.chooseDay());
             }
@@ -43,8 +42,8 @@ namespace Träningschema
             Console.WriteLine("Tryck 1 för att starta om \nSkriv något annat än 1 för att lämna");
             string Continue = Console.ReadLine();
 
-            switch (Continue)
-            {
+            switch (Continue) //Return true fortsätter programmet när användaren skriver 1, om användaren skriver något annat så returnerar det false
+            {                 // och stänger ner programmet. 
                 case "1":
                     return true;
                     break;
